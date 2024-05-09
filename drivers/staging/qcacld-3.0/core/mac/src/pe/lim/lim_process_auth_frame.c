@@ -409,7 +409,7 @@ static void lim_process_sae_auth_frame(struct mac_context *mac_ctx,
 {
 	tpSirMacMgmtHdr mac_hdr;
 	uint32_t frame_len;
-	uint8_t *body_ptr;
+	uint8_t __maybe_unused *body_ptr;
 	enum rxmgmt_flags rx_flags = RXMGMT_FLAG_NONE;
 	struct sae_auth_retry *sae_retry;
 

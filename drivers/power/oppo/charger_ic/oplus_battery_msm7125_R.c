@@ -17068,7 +17068,7 @@ static const struct dev_pm_ops smb5_pm_ops = {
 	.resume		= smb5_pm_resume,
 	.suspend		= smb5_pm_suspend,
 };
-void oplus_set_typec_sinkonly()
+void oplus_set_typec_sinkonly(void)
 {
 	oplus_set_otg_switch_status(false);
 };

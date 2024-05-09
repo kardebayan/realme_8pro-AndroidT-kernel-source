@@ -2783,7 +2783,7 @@ static int hdd_parse_setmaxtxpower_command(uint8_t *command, int *tx_power)
 {
 	uint8_t *in_ptr = command;
 	int temp_int;
-	int v = 0;
+	int __maybe_unused v = 0;
 	*tx_power = 0;
 
 	in_ptr = strnchr(command, strlen(command), SPACE_ASCII_VALUE);

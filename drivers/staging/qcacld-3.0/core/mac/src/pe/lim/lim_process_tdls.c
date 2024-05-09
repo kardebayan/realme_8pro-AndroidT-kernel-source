@@ -498,7 +498,7 @@ static QDF_STATUS lim_send_tdls_dis_req_frame(struct mac_context *mac,
 	tDot11fTDLSDisReq tdlsDisReq;
 	uint32_t status = 0;
 	uint32_t nPayload = 0;
-	uint32_t size = 0;
+	uint32_t __maybe_unused size = 0;
 	uint32_t nBytes = 0;
 	uint32_t header_offset = 0;
 	uint8_t *pFrame;
@@ -3020,7 +3020,7 @@ static void lim_check_aid_and_delete_peer(struct mac_context *p_mac,
 	int i, aid;
 	size_t aid_bitmap_size = sizeof(session_entry->peerAIDBitmap);
 	struct qdf_mac_addr mac_addr;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 	/*
 	 * Check all the set bit in peerAIDBitmap and delete the peer
 	 * (with that aid) entry from the hash table and add the aid

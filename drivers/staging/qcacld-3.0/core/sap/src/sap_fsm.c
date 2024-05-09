@@ -893,7 +893,7 @@ QDF_STATUS sap_channel_sel(struct sap_context *sap_context)
 	uint32_t *freq_list = NULL;
 	uint8_t num_of_channels = 0;
 	mac_handle_t mac_handle;
-	uint32_t con_ch_freq;
+	uint32_t __maybe_unused con_ch_freq;
 	uint8_t vdev_id;
 	uint32_t scan_id;
 

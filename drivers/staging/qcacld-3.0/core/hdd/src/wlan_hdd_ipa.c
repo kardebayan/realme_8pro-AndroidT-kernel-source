@@ -40,8 +40,8 @@ void hdd_ipa_set_tx_flow_info(void)
 	struct qdf_mac_addr staBssid = QDF_MAC_ADDR_ZERO_INIT;
 	struct qdf_mac_addr p2pBssid = QDF_MAC_ADDR_ZERO_INIT;
 	struct qdf_mac_addr apBssid = QDF_MAC_ADDR_ZERO_INIT;
-	uint8_t staChannel = 0, p2pChannel = 0, apChannel = 0;
-	const char *p2pMode = "DEV";
+	uint8_t __maybe_unused staChannel = 0, __maybe_unused p2pChannel = 0, __maybe_unused apChannel = 0;
+	const char __maybe_unused *p2pMode = "DEV";
 	struct hdd_context *hdd_ctx;
 	struct cds_context *cds_ctx;
 #ifdef QCA_LL_LEGACY_TX_FLOW_CONTROL
@@ -54,7 +54,7 @@ void hdd_ipa_set_tx_flow_info(void)
 	struct hdd_adapter *adapter5 = NULL;
 	void *soc = cds_get_context(QDF_MODULE_ID_SOC);
 #endif /* QCA_LL_LEGACY_TX_FLOW_CONTROL */
-	struct wlan_objmgr_psoc *psoc;
+	struct wlan_objmgr_psoc __maybe_unused *psoc;
 	wlan_net_dev_ref_dbgid dbgid = NET_DEV_HOLD_IPA_SET_TX_FLOW_INFO;
 
 	hdd_ctx = cds_get_context(QDF_MODULE_ID_HDD);

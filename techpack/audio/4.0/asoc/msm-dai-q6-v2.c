@@ -7089,7 +7089,7 @@ static const struct snd_soc_component_driver msm_dai_q6_component = {
 
 static int msm_dai_q6_dev_probe(struct platform_device *pdev)
 {
-	int rc, id, i, len;
+	int rc, id, i, __maybe_unused len;
 	const char *q6_dev_id = "qcom,msm-dai-q6-dev-id";
 	char stream_name[80];
 

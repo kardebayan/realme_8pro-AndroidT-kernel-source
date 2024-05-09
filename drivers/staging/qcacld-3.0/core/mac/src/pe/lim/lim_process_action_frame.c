@@ -329,7 +329,7 @@ lim_process_ext_channel_switch_action_frame(struct mac_context *mac_ctx,
 		uint8_t *rx_packet_info, struct pe_session *session_entry)
 {
 
-	tpSirMacMgmtHdr         hdr;
+	tpSirMacMgmtHdr         __maybe_unused hdr;
 	uint8_t                 *body;
 	tDot11fext_channel_switch_action_frame *ext_channel_switch_frame;
 	uint32_t                frame_len;
@@ -691,7 +691,7 @@ static void __lim_process_add_ts_rsp(struct mac_context *mac_ctx,
 	uint8_t ac;
 	tpDphHashNode sta_ds_ptr = NULL;
 	uint8_t rsp_reqd = 1;
-	uint32_t cfg_len;
+	uint32_t __maybe_unused cfg_len;
 	tSirMacAddr peer_macaddr;
 
 	mac_hdr = WMA_GET_RX_MAC_HEADER(rx_pkt_info);
@@ -1331,7 +1331,7 @@ static QDF_STATUS
 __lim_process_link_measurement_req(struct mac_context *mac, uint8_t *pRxPacketInfo,
 				   struct pe_session *pe_session)
 {
-	tpSirMacMgmtHdr pHdr;
+	tpSirMacMgmtHdr __maybe_unused pHdr;
 	tDot11fLinkMeasurementRequest frm;
 	uint32_t frameLen, nStatus;
 	uint8_t *pBody;
@@ -1370,7 +1370,7 @@ static void
 __lim_process_neighbor_report(struct mac_context *mac, uint8_t *pRxPacketInfo,
 			      struct pe_session *pe_session)
 {
-	tpSirMacMgmtHdr pHdr;
+	tpSirMacMgmtHdr __maybe_unused pHdr;
 	tDot11fNeighborReportResponse *pFrm;
 	uint32_t frameLen, nStatus;
 	uint8_t *pBody;

@@ -286,7 +286,7 @@ static int wcd_check_cross_conn(struct wcd_mbhc *mbhc)
 	enum wcd_mbhc_plug_type plug_type = MBHC_PLUG_TYPE_NONE;
 	int hphl_adc_res = 0, hphr_adc_res = 0;
 	u8 fsm_en = 0;
-	int ret = 0;
+	int __maybe_unused ret = 0;
 	u8 adc_mode = 0;
 	u8 elect_ctl = 0;
 	u8 adc_en = 0;

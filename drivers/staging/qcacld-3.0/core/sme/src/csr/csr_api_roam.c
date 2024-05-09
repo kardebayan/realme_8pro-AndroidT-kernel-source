@@ -2248,7 +2248,7 @@ is_dfs_unsafe_extra_band_chan(struct mac_context *mac_ctx, uint32_t freq,
 	uint16_t  unsafe_chan[NUM_CHANNELS];
 	uint16_t  unsafe_chan_cnt = 0;
 	uint16_t  cnt = 0;
-	bool      is_unsafe_chan;
+	bool      __maybe_unused is_unsafe_chan;
 	qdf_device_t qdf_ctx = cds_get_context(QDF_MODULE_ID_QDF_DEVICE);
 
 	if (!qdf_ctx) {
@@ -3847,7 +3847,7 @@ csr_connect_info(struct mac_context *mac_ctx,
 		 eCsrRoamResult u2)
 {
 	struct tagCsrRoamConnectedProfile *conn_profile;
-	struct csr_roam_profile *profile;
+	struct csr_roam_profile __maybe_unused *profile;
 	WLAN_HOST_DIAG_EVENT_DEF(conn_stats,
 				 struct host_event_wlan_connection_stats);
 
@@ -4820,7 +4820,7 @@ void csr_set_cfg_privacy(struct mac_context *mac, struct csr_roam_profile *pProf
 	 * associations. See note below in this function...
 	 */
 	uint32_t privacy_enabled = 0, rsn_enabled = 0, wep_default_key_id = 0;
-	uint32_t WepKeyLength = WLAN_CRYPTO_KEY_WEP40_LEN;
+	uint32_t __maybe_unused WepKeyLength = WLAN_CRYPTO_KEY_WEP40_LEN;
 	uint32_t Key0Length = 0, Key1Length = 0, Key2Length = 0, Key3Length = 0;
 
 	/* Reserve for the biggest key */
@@ -5346,7 +5346,7 @@ QDF_STATUS csr_roam_set_bss_config_cfg(struct mac_context *mac, uint32_t session
 				       struct sDot11fBeaconIEs *pIes,
 				       bool resetCountry)
 {
-	uint32_t cfgCb = WNI_CFG_CHANNEL_BONDING_MODE_DISABLE;
+	uint32_t __maybe_unused cfgCb = WNI_CFG_CHANNEL_BONDING_MODE_DISABLE;
 	struct csr_roam_session *pSession = CSR_GET_SESSION(mac, sessionId);
 	uint32_t chan_freq = 0;
 
@@ -5997,7 +5997,7 @@ static void csr_roam_join_handle_profile(struct mac_context *mac_ctx,
 		struct tag_csrscan_result *scan_result)
 {
 #ifndef WLAN_MDM_CODE_REDUCTION_OPT
-	uint8_t acm_mask = 0;
+	uint8_t __maybe_unused acm_mask = 0;
 #endif
 	QDF_STATUS status;
 	struct csr_roam_session *session;
@@ -7225,7 +7225,7 @@ static void csr_roam_process_results_default(struct mac_context *mac_ctx,
 	uint32_t session_id = cmd->vdev_id;
 	struct csr_roam_session *session;
 	struct csr_roam_info *roam_info;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 	struct csr_roam_connectedinfo *prev_connect_info = NULL;
 
 	if (!CSR_IS_SESSION_VALID(mac_ctx, session_id)) {
@@ -7458,7 +7458,7 @@ static void csr_roam_process_start_bss_success(struct mac_context *mac_ctx,
 	eCsrRoamResult roam_result;
 	tDot11fBeaconIEs *ies_ptr = NULL;
 	tSirMacAddr bcast_mac = { 0xff, 0xff, 0xff, 0xff, 0xff, 0xff };
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 	host_log_ibss_pkt_type *ibss_log;
 #ifdef FEATURE_WLAN_MCC_TO_SCC_SWITCH
 	struct ht_profile *src_profile = NULL;
@@ -8267,7 +8267,7 @@ static bool csr_roam_process_results(struct mac_context *mac_ctx, tSmeCmd *cmd,
 	eRoamCmdStatus roam_status;
 	eCsrRoamResult roam_result;
 	host_log_ibss_pkt_type *ibss_log;
-	struct start_bss_rsp  *start_bss_rsp = NULL;
+	struct start_bss_rsp  __maybe_unused *start_bss_rsp = NULL;
 
 	if (!session) {
 		sme_err("session %d not found ", session_id);
@@ -11067,7 +11067,7 @@ void csr_roam_joined_state_msg_processor(struct mac_context *mac, void *msg_buf)
 		tSirSmeAssocIndToUpperLayerCnf *pUpperLayerAssocCnf;
 		struct csr_roam_info *roam_info;
 		uint32_t sessionId;
-		QDF_STATUS status;
+		QDF_STATUS __maybe_unused status;
 
 		sme_debug("ASSOCIATION confirmation can be given to upper layer ");
 		pUpperLayerAssocCnf =
@@ -11259,7 +11259,7 @@ csr_roam_chk_lnk_set_ctx_rsp(struct mac_context *mac_ctx, tSirSmeRsp *msg_ptr)
 {
 	struct csr_roam_session *session;
 	uint32_t sessionId = WLAN_UMAC_VDEV_ID_MAX;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 	struct csr_roam_info *roam_info;
 	eCsrRoamResult result = eCSR_ROAM_RESULT_NONE;
 	struct set_context_rsp *pRsp = (struct set_context_rsp *)msg_ptr;
@@ -12810,7 +12810,7 @@ csr_roam_chk_lnk_deauth_rsp(struct mac_context *mac_ctx, tSirSmeRsp *msg_ptr)
 {
 	struct csr_roam_session *session;
 	uint32_t sessionId = WLAN_UMAC_VDEV_ID_MAX;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 	struct csr_roam_info *roam_info;
 	struct deauth_rsp *pDeauthRsp = (struct deauth_rsp *) msg_ptr;
 
@@ -12843,7 +12843,7 @@ csr_roam_chk_lnk_disassoc_rsp(struct mac_context *mac_ctx, tSirSmeRsp *msg_ptr)
 {
 	struct csr_roam_session *session;
 	uint32_t sessionId = WLAN_UMAC_VDEV_ID_MAX;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 	struct csr_roam_info *roam_info;
 	/*
 	 * session id is invalid here so cant use it to access the array
@@ -15912,7 +15912,7 @@ QDF_STATUS csr_send_join_req_msg(struct mac_context *mac, uint32_t sessionId,
 				 tDot11fBeaconIEs *pIes, uint16_t messageType)
 {
 	QDF_STATUS status = QDF_STATUS_SUCCESS;
-	uint8_t acm_mask = 0, uapsd_mask;
+	uint8_t __maybe_unused acm_mask = 0, uapsd_mask;
 	uint32_t bss_freq;
 	uint16_t msgLen, ieLen;
 	tSirMacRateSet OpRateSet;
@@ -15928,7 +15928,7 @@ QDF_STATUS csr_send_join_req_msg(struct mac_context *mac, uint32_t sessionId,
 	struct ps_global_info *ps_global_info = &mac->sme.ps_global_info;
 	struct ps_params *ps_param = &ps_global_info->ps_params[sessionId];
 	uint8_t ese_config = 0;
-	tpCsrNeighborRoamControlInfo neigh_roam_info;
+	tpCsrNeighborRoamControlInfo __maybe_unused neigh_roam_info;
 	uint32_t value = 0, value1 = 0;
 	bool is_vendor_ap_present;
 	struct vdev_type_nss *vdev_type_nss;
@@ -18676,7 +18676,7 @@ csr_create_roam_scan_offload_request(struct mac_context *mac_ctx,
 				     tpCsrNeighborRoamControlInfo roam_info)
 {
 	QDF_STATUS status;
-	uint8_t i, j, dot11_mode;
+	uint8_t i, j, __maybe_unused dot11_mode;
 	bool ese_neighbor_list_recvd = false;
 	uint8_t ch_cache_str[128] = { 0 };
 	struct roam_offload_scan_req *req_buf = NULL;
@@ -21726,7 +21726,7 @@ void csr_process_nss_update_req(struct mac_context *mac, tSmeCmd *command)
 	QDF_STATUS status;
 	struct scheduler_msg msg_return = {0};
 	struct sir_bcn_update_rsp *param;
-	struct csr_roam_session *session;
+	struct csr_roam_session __maybe_unused *session;
 
 
 	if (!CSR_IS_SESSION_VALID(mac, command->vdev_id)) {
@@ -22105,7 +22105,7 @@ static QDF_STATUS csr_process_roam_sync_callback(struct mac_context *mac_ctx,
 	struct csr_roam_info *roam_info;
 	tCsrRoamConnectedProfile *conn_profile = NULL;
 	sme_QosAssocInfo assoc_info;
-	struct bss_params *add_bss_params;
+	struct bss_params __maybe_unused *add_bss_params;
 	QDF_STATUS status = QDF_STATUS_SUCCESS;
 	tPmkidCacheInfo *pmkid_cache;
 	uint16_t len;
@@ -22843,7 +22843,7 @@ csr_enable_roaming_on_connected_sta(struct mac_context *mac, uint8_t vdev_id)
 	uint32_t op_ch_freq_list[MAX_NUMBER_OF_CONC_CONNECTIONS];
 	uint8_t vdev_id_list[MAX_NUMBER_OF_CONC_CONNECTIONS];
 	uint32_t sta_vdev_id = WLAN_INVALID_VDEV_ID;
-	struct csr_roam_session *session;
+	struct csr_roam_session __maybe_unused *session;
 	uint32_t count;
 	uint32_t idx;
 

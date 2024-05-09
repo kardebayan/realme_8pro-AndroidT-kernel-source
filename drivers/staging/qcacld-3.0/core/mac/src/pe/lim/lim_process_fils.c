@@ -771,7 +771,7 @@ static void lim_generate_rmsk_data(struct pe_session *pe_session)
 	uint8_t optional_data[4] = {0};
 	uint8_t rmsk_label[] = RMSK_LABEL;
 	struct pe_fils_session *fils_info = pe_session->fils_info;
-	struct fils_auth_rsp_info *auth_info;
+	struct fils_auth_rsp_info __maybe_unused *auth_info;
 
 	if (!fils_info)
 		return;
@@ -806,10 +806,10 @@ static void lim_generate_rmsk_data(struct pe_session *pe_session)
 static QDF_STATUS lim_process_auth_wrapped_data(struct pe_session *pe_session,
 			uint8_t *wrapped_data, uint32_t data_len)
 {
-	uint8_t code;
-	uint8_t identifier;
-	uint16_t length;
-	uint8_t type;
+	uint8_t __maybe_unused code;
+	uint8_t __maybe_unused identifier;
+	uint16_t __maybe_unused length;
+	uint8_t __maybe_unused type;
 	unsigned long flags;
 	struct pe_fils_session *fils_info;
 	uint8_t hash[32] = {0}, crypto;
@@ -1755,7 +1755,7 @@ static QDF_STATUS lim_parse_kde_elements(struct mac_context *mac_ctx,
 {
 	uint8_t rem_len = kde_list_len;
 	uint8_t *temp_ie = kde_list;
-	uint8_t elem_id, data_type, data_len, *ie_data = NULL, *current_ie;
+	uint8_t __maybe_unused elem_id, data_type, data_len, *ie_data = NULL, *current_ie;
 	uint16_t elem_len;
 
 	if (!kde_list_len || !kde_list) {

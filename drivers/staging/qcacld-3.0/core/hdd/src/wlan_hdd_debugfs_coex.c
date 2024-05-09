@@ -202,7 +202,7 @@ static QDF_STATUS hdd_debugfs_mws_coex_state_read(qdf_debugfs_file_t file,
 	struct osif_psoc_sync *psoc_sync;
 	struct hdd_context *hdd_ctx = arg;
 	int ret;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 
 	ret = osif_psoc_sync_op_start(wiphy_dev(hdd_ctx->wiphy), &psoc_sync);
 	if (ret)
@@ -303,7 +303,7 @@ static QDF_STATUS hdd_debugfs_mws_coex_dpwb_read(qdf_debugfs_file_t file,
 	struct osif_psoc_sync *psoc_sync;
 	struct hdd_context *hdd_ctx = arg;
 	int ret;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 
 	ret = osif_psoc_sync_op_start(wiphy_dev(hdd_ctx->wiphy), &psoc_sync);
 	if (ret)
@@ -389,7 +389,7 @@ static QDF_STATUS hdd_debugfs_mws_tdm_state_read(qdf_debugfs_file_t file,
 	struct osif_psoc_sync *psoc_sync;
 	struct hdd_context *hdd_ctx = arg;
 	int ret;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 
 	ret = osif_psoc_sync_op_start(wiphy_dev(hdd_ctx->wiphy), &psoc_sync);
 	if (ret)
@@ -491,7 +491,7 @@ static QDF_STATUS hdd_debugfs_mws_coex_idrx_read(qdf_debugfs_file_t file,
 	struct osif_psoc_sync *psoc_sync;
 	struct hdd_context *hdd_ctx = arg;
 	int ret;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 
 	ret = osif_psoc_sync_op_start(wiphy_dev(hdd_ctx->wiphy), &psoc_sync);
 	if (ret)
@@ -601,7 +601,7 @@ static QDF_STATUS hdd_debugfs_mws_antenna_sharing_read(qdf_debugfs_file_t file,
 	struct osif_psoc_sync *psoc_sync;
 	struct hdd_context *hdd_ctx = arg;
 	int ret;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 
 	ret = osif_psoc_sync_op_start(wiphy_dev(hdd_ctx->wiphy), &psoc_sync);
 	if (ret)

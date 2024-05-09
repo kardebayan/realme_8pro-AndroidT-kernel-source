@@ -9457,7 +9457,7 @@ QDF_STATUS sme_ap_disable_intra_bss_fwd(mac_handle_t mac_handle,
 {
 	struct mac_context *mac = MAC_CONTEXT(mac_handle);
 	int status = QDF_STATUS_SUCCESS;
-	QDF_STATUS qdf_status = QDF_STATUS_SUCCESS;
+	QDF_STATUS __maybe_unused qdf_status = QDF_STATUS_SUCCESS;
 	struct scheduler_msg message = {0};
 	tpDisableIntraBssFwd pSapDisableIntraFwd = NULL;
 
@@ -13540,7 +13540,7 @@ void sme_register_p2p_lo_event(mac_handle_t mac_handle, void *context,
 			       p2p_lo_callback callback)
 {
 	struct mac_context *mac = MAC_CONTEXT(mac_handle);
-	QDF_STATUS status = QDF_STATUS_E_FAILURE;
+	QDF_STATUS __maybe_unused status = QDF_STATUS_E_FAILURE;
 
 	status = sme_acquire_global_lock(&mac->sme);
 	mac->sme.p2p_lo_event_callback = callback;
@@ -15083,7 +15083,7 @@ void sme_enable_roaming_on_connected_sta(mac_handle_t mac_handle,
 int16_t sme_get_oper_chan_freq(struct wlan_objmgr_vdev *vdev)
 {
 	uint8_t vdev_id;
-	struct csr_roam_session *session;
+	struct csr_roam_session __maybe_unused *session;
 	struct mac_context *mac_ctx;
 	mac_handle_t mac_handle;
 
@@ -15145,7 +15145,7 @@ enum phy_ch_width sme_get_oper_ch_width(struct wlan_objmgr_vdev *vdev)
 int sme_get_sec20chan_freq_mhz(struct wlan_objmgr_vdev *vdev,
 						uint16_t *sec20chan_freq)
 {
-	uint8_t vdev_id;
+	uint8_t __maybe_unused vdev_id;
 
 	vdev_id = wlan_vdev_get_id(vdev);
 	/* Need to extend */

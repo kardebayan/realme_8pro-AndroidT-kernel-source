@@ -340,7 +340,7 @@ static void lim_send_mlm_assoc_req(struct mac_context *mac_ctx,
 	uint32_t val;
 	uint16_t caps;
 	uint32_t tele_bcn = 0;
-	tpSirMacCapabilityInfo cap_info;
+	tpSirMacCapabilityInfo __maybe_unused cap_info;
 
 	if (!session_entry->lim_join_req) {
 		pe_err("Join Request is NULL");
@@ -1351,7 +1351,7 @@ void lim_handle_sme_join_result(struct mac_context *mac_ctx,
 	struct pe_session *session)
 {
 	join_params param;
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 
 	if (!session) {
 		pe_err("session is NULL");
@@ -1845,7 +1845,7 @@ void lim_process_sta_mlm_del_sta_rsp(struct mac_context *mac,
 				     struct scheduler_msg *limMsgQ,
 				     struct pe_session *pe_session)
 {
-	tSirResultCodes status_code = eSIR_SME_SUCCESS;
+	tSirResultCodes __maybe_unused status_code = eSIR_SME_SUCCESS;
 	tpDeleteStaParams pDelStaParams = (tpDeleteStaParams) limMsgQ->bodyptr;
 
 	if (!pDelStaParams) {
@@ -2226,7 +2226,7 @@ static void lim_process_sta_mlm_add_bss_rsp(struct mac_context *mac_ctx,
 {
 	tLimMlmAssocCnf mlm_assoc_cnf;
 	uint32_t msg_type = LIM_MLM_ASSOC_CNF;
-	uint32_t sub_type = LIM_ASSOC;
+	uint32_t __maybe_unused sub_type = LIM_ASSOC;
 	tpDphHashNode sta_ds = NULL;
 	uint8_t update_sta = false;
 

@@ -1093,7 +1093,7 @@ lim_check_mgmt_registered_frames(struct mac_context *mac_ctx, uint8_t *buff_desc
 	bool match = false;
 	tpSirMacActionFrameHdr action_hdr;
 	uint8_t actionID, category;
-	QDF_STATUS qdf_status;
+	QDF_STATUS __maybe_unused qdf_status;
 
 	hdr = WMA_GET_RX_MAC_HEADER(buff_desc);
 	fc = hdr->fc;
@@ -1261,7 +1261,7 @@ lim_handle80211_frames(struct mac_context *mac, struct scheduler_msg *limMsg,
 	tpSirMacMgmtHdr pHdr = NULL;
 	struct pe_session *pe_session = NULL;
 	uint8_t sessionId;
-	bool isFrmFt = false;
+	bool __maybe_unused isFrmFt = false;
 	uint32_t frequency;
 	bool is_hw_sbs_capable = false;
 

@@ -2760,7 +2760,7 @@ QDF_STATUS wlansap_filter_ch_based_acs(struct sap_context *sap_ctx,
 bool wlansap_is_6ghz_included_in_acs_range(struct sap_context *sap_ctx)
 {
 	uint32_t i;
-	uint32_t *ch_freq_list;
+	uint32_t __maybe_unused *ch_freq_list;
 
 	if (!sap_ctx || !sap_ctx->acs_cfg ||
 	    !sap_ctx->acs_cfg->master_freq_list ||
@@ -2793,7 +2793,7 @@ wlansap_get_safe_channel(struct sap_context *sap_ctx)
 	struct mac_context *mac;
 	uint32_t pcl_freqs[NUM_CHANNELS];
 	QDF_STATUS status;
-	mac_handle_t mac_handle;
+	mac_handle_t __maybe_unused mac_handle;
 	uint32_t pcl_len = 0;
 
 	if (!sap_ctx) {
@@ -2866,7 +2866,7 @@ wlansap_get_safe_channel_from_pcl_and_acs_range(struct sap_context *sap_ctx)
 	struct sir_pcl_list pcl = {0};
 	uint32_t pcl_freqs[NUM_CHANNELS] = {0};
 	QDF_STATUS status;
-	mac_handle_t mac_handle;
+	mac_handle_t __maybe_unused mac_handle;
 	uint32_t pcl_len = 0;
 
 	if (!sap_ctx) {

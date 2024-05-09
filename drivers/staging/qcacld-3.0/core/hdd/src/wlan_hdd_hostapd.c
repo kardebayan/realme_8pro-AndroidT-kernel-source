@@ -754,7 +754,7 @@ static int hdd_hostapd_set_mac_address(struct net_device *net_dev, void *addr)
 static void hdd_clear_sta(struct hdd_adapter *adapter,
 			  struct hdd_station_info *sta_info)
 {
-	struct hdd_ap_ctx *ap_ctx;
+	struct hdd_ap_ctx __maybe_unused *ap_ctx;
 	struct csr_del_sta_params del_sta_params;
 
 	ap_ctx = WLAN_HDD_GET_AP_CTX_PTR(adapter);
@@ -1786,7 +1786,7 @@ QDF_STATUS hdd_hostapd_sap_event_cb(struct sap_event *sap_event,
 	uint8_t *we_custom_event_generic = NULL;
 	int we_event = 0;
 	int i = 0;
-	uint8_t sta_id;
+	uint8_t __maybe_unused sta_id;
 	QDF_STATUS qdf_status;
 	bool bAuthRequired = true;
 	char *unknownSTAEvent = NULL;
@@ -3786,7 +3786,7 @@ int wlan_hdd_set_channel(struct wiphy *wiphy,
 				enum nl80211_channel_type channel_type)
 {
 	struct hdd_adapter *adapter = NULL;
-	uint32_t num_ch = 0;
+	uint32_t __maybe_unused num_ch = 0;
 	int channel = 0;
 	int channel_seg2 = 0;
 	struct hdd_context *hdd_ctx;
@@ -4508,8 +4508,8 @@ QDF_STATUS wlan_hdd_config_acs(struct hdd_context *hdd_ctx,
 			       struct hdd_adapter *adapter)
 {
 	struct sap_config *sap_config;
-	struct hdd_config *ini_config;
-	mac_handle_t mac_handle;
+	struct hdd_config __maybe_unused *ini_config;
+	mac_handle_t __maybe_unused mac_handle;
 	uint8_t is_overlap_enable = 0;
 	QDF_STATUS status;
 
@@ -4833,7 +4833,7 @@ int wlan_hdd_restore_channels(struct hdd_context *hdd_ctx)
 {
 	struct hdd_cache_channels *cache_chann;
 	struct wiphy *wiphy;
-	int freq, status, rf_channel;
+	int freq, status, __maybe_unused rf_channel;
 	int i;
 	struct ieee80211_channel *wiphy_channel = NULL;
 
@@ -5103,7 +5103,7 @@ int wlan_hdd_cfg80211_start_bss(struct hdd_adapter *adapter,
 	const uint8_t *ie = NULL;
 	eCsrEncryptionType rsn_encrypt_type;
 	eCsrEncryptionType mc_rsn_encrypt_type;
-	uint16_t capab_info;
+	uint16_t __maybe_unused capab_info;
 	int status = QDF_STATUS_SUCCESS, ret;
 	int qdf_status = QDF_STATUS_SUCCESS;
 	sap_event_cb sap_event_callback;

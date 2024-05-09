@@ -2059,7 +2059,7 @@ static int wsa_macro_spkr_left_boost_stage_get(struct snd_kcontrol *kcontrol,
 static int wsa_macro_spkr_left_boost_stage_put(struct snd_kcontrol *kcontrol,
 			struct snd_ctl_elem_value *ucontrol)
 {
-	u8 bst_state_max;
+	u8 __maybe_unused bst_state_max;
 	struct snd_soc_codec *codec = snd_soc_kcontrol_codec(kcontrol);
 
 	dev_dbg(codec->dev, "%s: ucontrol->value.integer.value[0]  = %ld\n",
@@ -2088,7 +2088,7 @@ static int wsa_macro_spkr_right_boost_stage_get(struct snd_kcontrol *kcontrol,
 static int wsa_macro_spkr_right_boost_stage_put(struct snd_kcontrol *kcontrol,
 					struct snd_ctl_elem_value *ucontrol)
 {
-	u8 bst_state_max;
+	u8 __maybe_unused bst_state_max;
 	struct snd_soc_codec *codec = snd_soc_kcontrol_codec(kcontrol);
 
 	dev_dbg(codec->dev, "%s: ucontrol->value.integer.value[0]  = %ld\n",

@@ -1099,7 +1099,7 @@ static ssize_t tfa98xx_dbgfs_start_set(struct file *file,
 #ifdef OPLUS_ARCH_EXTENDS
 static int tfa98xx_speaker_recalibration_v6(struct tfa_device *tfa, int *speakerImpedance)
 {
-	int err, error = Tfa98xx_Error_Ok;
+	int __maybe_unused err, error = Tfa98xx_Error_Ok;
 	int cal_profile = -1;
 	int profile = -1;
 

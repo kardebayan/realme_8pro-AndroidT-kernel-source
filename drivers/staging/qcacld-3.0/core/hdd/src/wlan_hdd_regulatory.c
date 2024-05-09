@@ -663,9 +663,9 @@ void hdd_update_indoor_channel(struct hdd_context *hdd_ctx,
 	int band_num;
 	int chan_num;
 	enum channel_enum chan_enum = CHAN_ENUM_2412;
-	struct ieee80211_channel *wiphy_chan, *wiphy_chan_144 = NULL;
+	struct ieee80211_channel *wiphy_chan, __maybe_unused *wiphy_chan_144 = NULL;
 	struct regulatory_channel *cds_chan;
-	uint8_t band_capability;
+	uint8_t __maybe_unused band_capability;
 	struct wiphy *wiphy = hdd_ctx->wiphy;
 
 	hdd_enter();
@@ -1507,7 +1507,7 @@ int hdd_regulatory_init(struct hdd_context *hdd_ctx, struct wiphy *wiphy)
 
 void hdd_update_regdb_offload_config(struct hdd_context *hdd_ctx)
 {
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 	bool ignore_fw_reg_offload_ind = false;
 
 	status = ucfg_mlme_get_ignore_fw_reg_offload_ind(

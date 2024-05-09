@@ -1686,7 +1686,7 @@ static __iw_softap_getassoc_stamacaddr(struct net_device *dev,
 	struct hdd_station_info *sta_info;
 	struct hdd_context *hdd_ctx;
 	char *buf;
-	int left;
+	int __maybe_unused left;
 	int ret;
 	/* maclist_index must be u32 to match userspace */
 	u32 maclist_index;

@@ -2599,7 +2599,7 @@ int q6asm_cpu_buf_release(int dir, struct audio_client *ac)
 {
 	struct audio_port_data *port;
 	int ret = 0;
-	int idx;
+	int __maybe_unused idx;
 
 	if (!ac || ((dir != IN) && (dir != OUT))) {
 		pr_err("%s: ac %pK dir %d\n", __func__, ac, dir);
@@ -8226,7 +8226,7 @@ int q6asm_memory_map(struct audio_client *ac, phys_addr_t buf_add, int dir,
 {
 	struct avs_cmd_shared_mem_map_regions *mmap_regions = NULL;
 	struct avs_shared_map_region_payload  *mregions = NULL;
-	struct audio_port_data *port = NULL;
+	struct audio_port_data __maybe_unused *port = NULL;
 	void	*mmap_region_cmd = NULL;
 	void	*payload = NULL;
 	struct asm_buffer_node *buffer_node = NULL;
@@ -9478,7 +9478,7 @@ int q6asm_async_write(struct audio_client *ac,
 	struct asm_data_cmd_write_v2 write;
 	struct asm_buffer_node *buf_node = NULL;
 	struct list_head *ptr, *next;
-	struct audio_buffer        *ab;
+	struct audio_buffer __maybe_unused        *ab;
 	struct audio_port_data     *port;
 	phys_addr_t lbuf_phys_addr;
 	u32 liomode;

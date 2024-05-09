@@ -105,7 +105,7 @@ static void loopback_event_handler(uint32_t opcode,
 			(struct msm_transcode_loopback *)priv;
 	struct snd_soc_pcm_runtime *rtd;
 	struct snd_compr_stream *cstream;
-	struct audio_client *ac;
+	struct audio_client __maybe_unused *ac;
 	int stream_id;
 	int ret;
 

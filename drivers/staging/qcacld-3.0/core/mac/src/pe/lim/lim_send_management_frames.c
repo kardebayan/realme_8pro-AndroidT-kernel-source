@@ -1228,7 +1228,7 @@ lim_send_assoc_rsp_mgmt_frame(
 	uint8_t *frame;
 	tpSirMacMgmtHdr mac_hdr;
 	QDF_STATUS sir_status;
-	uint8_t lle_mode = 0, addts;
+	uint8_t lle_mode = 0, __maybe_unused addts;
 	tHalBitVal qos_mode, wme_mode;
 	uint32_t payload, bytes = 0, status;
 	void *packet;

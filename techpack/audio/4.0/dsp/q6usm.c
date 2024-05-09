@@ -487,7 +487,7 @@ int q6usm_us_param_buf_alloc(unsigned int dir,
 
 static int32_t q6usm_mmapcallback(struct apr_client_data *data, void *priv)
 {
-	uint32_t token;
+	uint32_t __maybe_unused token;
 	uint32_t *payload = data->payload;
 
 	if (data->payload_size < (2 * sizeof(uint32_t))) {

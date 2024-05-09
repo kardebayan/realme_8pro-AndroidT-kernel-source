@@ -70,7 +70,7 @@ lim_collect_bss_description(struct mac_context *mac,
 	uint32_t ieLen = 0;
 	tpSirMacMgmtHdr pHdr;
 	uint32_t chan_freq;
-	uint8_t rfBand = 0;
+	uint8_t __maybe_unused rfBand = 0;
 
 	pHdr = WMA_GET_RX_MAC_HEADER(pRxPacketInfo);
 

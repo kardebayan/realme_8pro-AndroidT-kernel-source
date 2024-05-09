@@ -978,7 +978,7 @@ static void wlan_hdd_fix_broadcast_eapol(struct hdd_adapter *adapter,
 static void __hdd_hard_start_xmit(struct sk_buff *skb,
 				  struct net_device *dev)
 {
-	QDF_STATUS status;
+	QDF_STATUS __maybe_unused status;
 	sme_ac_enum_type ac;
 	enum sme_qos_wmmuptype up;
 	struct hdd_adapter *adapter = WLAN_HDD_GET_PRIV_PTR(dev);

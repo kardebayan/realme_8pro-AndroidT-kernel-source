@@ -3121,7 +3121,7 @@ __lim_process_sme_delts_req(struct mac_context *mac, uint32_t *msg_buf)
 	tpDphHashNode sta = NULL;
 	struct pe_session *pe_session;
 	uint8_t sessionId;
-	uint32_t status = QDF_STATUS_SUCCESS;
+	uint32_t __maybe_unused status = QDF_STATUS_SUCCESS;
 	uint8_t smesessionId;
 
 	smesessionId = pDeltsReq->sessionId;
@@ -3955,7 +3955,7 @@ lim_send_set_max_tx_power_req(struct mac_context *mac, int8_t txPower,
 static void __lim_process_sme_register_mgmt_frame_req(struct mac_context *mac_ctx,
 		uint32_t *msg_buf)
 {
-	QDF_STATUS qdf_status;
+	QDF_STATUS __maybe_unused qdf_status;
 	struct register_mgmt_frame *sme_req =
 					(struct register_mgmt_frame *)msg_buf;
 	struct mgmt_frm_reg_info *lim_mgmt_regn = NULL;

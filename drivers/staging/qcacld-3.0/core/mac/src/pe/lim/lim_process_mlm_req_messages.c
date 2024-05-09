@@ -1259,7 +1259,7 @@ void lim_process_disassoc_ack_timeout(struct mac_context *mac_ctx)
 static void
 lim_process_mlm_disassoc_req(struct mac_context *mac_ctx, uint32_t *msg_buf)
 {
-	tLimMlmDisassocReq *mlm_disassoc_req;
+	tLimMlmDisassocReq __maybe_unused *mlm_disassoc_req;
 
 	if (!msg_buf) {
 		pe_err("Buffer is Pointing to NULL");
@@ -1548,7 +1548,7 @@ void lim_process_mlm_deauth_req(struct mac_context *mac_ctx, uint32_t *msg_buf)
 void lim_process_join_failure_timeout(struct mac_context *mac_ctx)
 {
 	tLimMlmJoinCnf mlm_join_cnf;
-	uint32_t len;
+	uint32_t __maybe_unused len;
 #ifdef FEATURE_WLAN_DIAG_SUPPORT_LIM
 	host_log_rssi_pkt_type *rssi_log = NULL;
 #endif

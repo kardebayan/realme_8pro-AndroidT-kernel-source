@@ -1396,7 +1396,7 @@ QDF_STATUS hdd_softap_stop_bss(struct hdd_adapter *adapter)
 	QDF_STATUS status = QDF_STATUS_E_FAILURE;
 	uint8_t indoor_chnl_marking = 0;
 	struct hdd_context *hdd_ctx;
-	struct hdd_ap_ctx *ap_ctx;
+	struct hdd_ap_ctx __maybe_unused *ap_ctx;
 	struct hdd_station_info *sta_info, *tmp = NULL;
 
 	hdd_ctx = WLAN_HDD_GET_CTX(adapter);
